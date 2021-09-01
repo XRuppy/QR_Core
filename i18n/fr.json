@@ -1,0 +1,14 @@
+{
+  "genTagButton" : "GÉNÉRER DES ÉTIQUETTES",
+  "titleDataTag": "DÉFINIR LES DONNÉES DE L'ÉTIQUETTE",
+  "phoneNumber": "Numéro de téléphone",
+  "idPS": "Identifiant PS",
+  "statement": "Position où vous imprimerez l'étiquette sur la feuille.",
+  "numStartTag": "Étiquette pour commencer",
+  "uploadLogoButton": "TÉLÉCHARGER LE LOGO...",
+  "titleRangePS": "DÉFINIR LA PLAGE PS",
+  "textfieldPSInitial": "Numéro de début de plage",
+  "textfieldPSFinal": "Numéro de fin de gamme",
+  "textfieldNumTag": "Nombre d'étiquettes",
+  "downloadPDFButton": "TÉLÉCHARGER LE PDF"
+}

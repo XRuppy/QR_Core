@@ -1,0 +1,14 @@
+{
+  "genTagButton" : "GERAR ETIQUETAS",
+  "titleDataTag": "DEFINIR DADOS DA ETIQUETA",
+  "phoneNumber": "Número de telefone",
+  "idPS": "Identificador PS",
+  "statement": "Posicione onde você imprimirá a etiqueta na folha.",
+  "numStartTag": "Etiqueta para começar",
+  "uploadLogoButton": "CARREGAR LOGO ...",
+  "titleRangePS": "DEFINE A FAIXA DE SP",
+  "textfieldPSInitial": "Número inicial do intervalo",
+  "textfieldPSFinal": "Número do fim do intervalo",
+  "textfieldNumTag": "Número de rótulos",
+  "downloadPDFButton": "BAIXAR PDF"
+}

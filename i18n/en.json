@@ -1,0 +1,14 @@
+{
+  "genTagButton" : "GENERATE LABELS",
+  "titleDataTag": "DEFINE LABEL DATA",
+  "phoneNumber": "Phone number",
+  "idPS": "PS identifier",
+  "statement": "Position where you will print the label on the sheet.",
+  "numStartTag": "Label to start with",
+  "uploadLogoButton": "UPLOAD LOGO ...",
+  "titleRangePS": "DEFINE PS RANGE",
+  "textfieldPSInitial": "Range start number",
+  "textfieldPSFinal": "End of range number",
+  "textfieldNumTag": "Number of labels",
+  "downloadPDFButton": "DOWNLOAD PDF"
+}
