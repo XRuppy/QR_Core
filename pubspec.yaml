@@ -38,7 +38,6 @@ dependencies:
   #Seleccionar ficheros en local
   file_picker: ^3.0.3
   plugin_platform_interface: ^2.0.1
-
   intl: ^0.17.0
 
 dev_dependencies:

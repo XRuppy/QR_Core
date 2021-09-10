@@ -3,12 +3,17 @@
   "titleDataTag": "DEFINIR DATOS DE LA ETIQUETA",
   "phoneNumber": "Número de teléfono",
   "idPS": "Identificador PS",
-  "statement": "Posición en la que va a imprimir la etiqueta en la hoja.",
+  "statement": "Elija la posición por la que empezará la impresión de la etiqueta en la hoja.",
+  "pos_Tag": "Empezará a imprimir por la etiqueta ",
   "numStartTag": "Etiqueta por la que va a comenzar",
   "uploadLogoButton": "SUBIR LOGO...",
   "titleRangePS": "DEFINIR RANGO DEL PS",
   "textfieldPSInitial": "Número inicio de rango",
   "textfieldPSFinal": "Número final de rango",
   "textfieldNumTag": "Número de etiquetas",
-  "downloadPDFButton": "DESCARGA PDF"
+  "downloadPDFButton": "DESCARGA PDF",
+  "tag": "Etiqueta",
+  "sizeLogo": "Las medidas recomendables de la imagen elegidas son 150x35 ",
+  "helperTextTelephone" : "Número de teléfono de la delegación o empresa.",
+  "helperTextPS" : "Número identificador de la puerta."
 }

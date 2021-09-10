@@ -3,12 +3,17 @@
   "titleDataTag": "DÉFINIR LES DONNÉES DE L'ÉTIQUETTE",
   "phoneNumber": "Numéro de téléphone",
   "idPS": "Identifiant PS",
-  "statement": "Position où vous imprimerez l'étiquette sur la feuille.",
+  "statement": "Choisissez la position où l'impression de l'étiquette commence sur la feuille.",
+  "pos_Tag": "Il commencera à imprimer à partir de l'étiquette ",
   "numStartTag": "Étiquette pour commencer",
   "uploadLogoButton": "TÉLÉCHARGER LE LOGO...",
   "titleRangePS": "DÉFINIR LA PLAGE PS",
   "textfieldPSInitial": "Numéro de début de plage",
   "textfieldPSFinal": "Numéro de fin de gamme",
   "textfieldNumTag": "Nombre d'étiquettes",
-  "downloadPDFButton": "TÉLÉCHARGER LE PDF"
+  "downloadPDFButton": "TÉLÉCHARGER LE PDF",
+  "tag": "Étiqueter",
+  "sizeLogo": "Les mesures de l'image sont recommandées pour être 150x35",
+  "helperTextTelephone" : "Numéro de téléphone de la délégation ou de l'entreprise.",
+  "helperTextPS" : "Numéro d'identification de la porte."
 }

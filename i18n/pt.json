@@ -3,12 +3,17 @@
   "titleDataTag": "DEFINIR DADOS DA ETIQUETA",
   "phoneNumber": "Número de telefone",
   "idPS": "Identificador PS",
-  "statement": "Posicione onde você imprimirá a etiqueta na folha.",
+  "statement": "Escolha a posição onde a impressão da etiqueta começa na folha.",
+  "pos_Tag": "Vai começar a imprimir a partir da etiqueta ",
   "numStartTag": "Etiqueta para começar",
   "uploadLogoButton": "CARREGAR LOGO ...",
   "titleRangePS": "DEFINE A FAIXA DE SP",
   "textfieldPSInitial": "Número inicial do intervalo",
   "textfieldPSFinal": "Número do fim do intervalo",
   "textfieldNumTag": "Número de rótulos",
-  "downloadPDFButton": "BAIXAR PDF"
+  "downloadPDFButton": "BAIXAR PDF",
+  "tag": "Rótulo",
+  "sizeLogo": "Recomenda-se que as medidas da imagem sejam 150x35",
+  "helperTextTelephone" : "Número de telefone da delegação ou empresa.",
+  "helperTextPS" : "Número do identificador da porta."
 }

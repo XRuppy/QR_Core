@@ -3,12 +3,17 @@
   "titleDataTag": "DEFINE LABEL DATA",
   "phoneNumber": "Phone number",
   "idPS": "PS identifier",
-  "statement": "Position where you will print the label on the sheet.",
+  "statement": "Choose the position where the label printing starts on the sheet.",
+  "pos_Tag": "It will start printing from the label ",
   "numStartTag": "Label to start with",
   "uploadLogoButton": "UPLOAD LOGO ...",
   "titleRangePS": "DEFINE PS RANGE",
   "textfieldPSInitial": "Range start number",
   "textfieldPSFinal": "End of range number",
   "textfieldNumTag": "Number of labels",
-  "downloadPDFButton": "DOWNLOAD PDF"
+  "downloadPDFButton": "DOWNLOAD PDF",
+  "tag": "Tag",
+  "sizeLogo": "The measurements of the image are recommended to be 150x35",
+  "helperTextTelephone" : "Telephone number of the delegation or company.",
+  "helperTextPS" : "Door identifier number."
 }

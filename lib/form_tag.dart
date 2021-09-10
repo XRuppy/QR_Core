@@ -33,7 +33,7 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
   ///VARIBLES FORMULARIO
   TextEditingController telephone;
   TextEditingController ps;
-  TextEditingController pos_InitialTag;
+  String pos_InitialTag='1';
 
   _startFilePicker() async {
     html.InputElement uploadInput = html.FileUploadInputElement();
@@ -73,6 +73,42 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
       });
     }
   }
+void bottonSelectChange(String number){
+    setState(() {
+      pos_InitialTag=number;
+    });
+}
+  Widget _botonTableTags(String texto) {
+    return RaisedButton(
+      child: Text(
+        texto,
+        style: TextStyle(color: Colors.white),
+      ),
+      color: Colors.blueAccent,
+      elevation: 20,
+      padding: EdgeInsets.all(15),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+        side: BorderSide(color: Colors.blue),
+      ),
+      onPressed: () => {
+        bottonSelectChange(texto)
+
+      },
+    );
+  }
+
+  Widget _rowButtonTags() {
+    return GridView.count(
+      crossAxisCount: 3,
+      childAspectRatio: 2.5,
+      crossAxisSpacing: 1,
+      children: [
+        for (int i = 1; i <= 27; i++)
+          _botonTableTags(i.toString())
+      ],
+    );
+  }
 
   String _formatterYearActually() {
     var now = new DateTime.now();
@@ -85,14 +121,13 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     telephone = TextEditingController(text: '900 827 700');
-    ps =TextEditingController(text: 'PS' + _formatterYearActually() + 'D00000');
-    pos_InitialTag = TextEditingController(text: '1');
+    ps =
+        TextEditingController(text: 'PS' + _formatterYearActually() + 'D00000');
   }
 
   @override
   void dispose() {
     telephone.dispose();
-    pos_InitialTag.dispose();
     ps.dispose();
     super.dispose();
   }
@@ -122,6 +157,7 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 30, bottom: 20),
@@ -133,49 +169,80 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
                                   child: SingleChildScrollView(
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Text(AppLocalizations.of(context).translate('titleDataTag'),
+                                        Text(
+                                            AppLocalizations.of(context)
+                                                .translate('titleDataTag'),
                                             style: TextStyle(
                                                 color: Colors.indigo,
                                                 fontSize: 25,
                                                 fontWeight: FontWeight.bold)),
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: TextFormField(
-                                            controller: telephone,
-                                            keyboardType: TextInputType.phone,
-                                            decoration: InputDecoration(
-                                                labelText: AppLocalizations.of(context).translate('phoneNumber'),
-                                                icon: Icon(Icons.phone)),
+                                          child: SizedBox(
+                                            height: 70,
+                                            width: 300,
+                                            child: TextFormField(
+                                              controller: telephone,
+                                              keyboardType: TextInputType.phone,
+                                              decoration: InputDecoration(
+                                                  helperText:
+                                                  AppLocalizations
+                                                      .of(context)
+                                                      .translate('helperTextTelephone'),
+                                                  labelText: AppLocalizations
+                                                          .of(context)
+                                                      .translate('phoneNumber'),
+                                                  icon: Icon(Icons.phone)),
+                                            ),
                                           ),
                                         ),
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: TextFormField(
-                                            controller: ps,
-                                            decoration: InputDecoration(
-                                                labelText: AppLocalizations.of(context).translate('idPS'),
-                                                icon: Icon(Icons
-                                                    .sensor_door_outlined)),
+                                          child: SizedBox(
+                                            height: 70,
+                                            width: 300,
+                                            child: TextFormField(
+                                              controller: ps,
+                                              decoration: InputDecoration(
+                                                helperText: AppLocalizations.of(
+                                                    context)
+                                                    .translate('helperTextPS'),
+                                                  labelText:
+                                                      AppLocalizations.of(
+                                                              context)
+                                                          .translate('idPS'),
+                                                  icon: Icon(Icons
+                                                      .sensor_door_outlined)),
+                                            ),
                                           ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Text(AppLocalizations.of(context).translate('statement')),
-                                        ),
-                                        SizedBox(
-                                          height: 50,
-                                          width: 300,
-                                          child: TextFormField(
-                                            controller: pos_InitialTag,
-                                            keyboardType: TextInputType.number,
-                                            decoration: InputDecoration(
-                                                labelText:AppLocalizations.of(context).translate('numStartTag'),
-                                                icon: Icon(Icons.location_on)),
-                                          ),
+                                          child: Text(
+                                              AppLocalizations.of(context)
+                                                  .translate('statement')),
                                         ),
                                         Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                              AppLocalizations.of(context)
+                                                  .translate('pos_Tag')+pos_InitialTag),
+                                        ),
+                                        SizedBox(
+                                            height: 400,
+                                            width: 300,
+                                            child: _rowButtonTags()),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                              AppLocalizations.of(context)
+                                                  .translate('sizeLogo')),
+                                        ),
+                                                           Padding(
                                           padding: const EdgeInsets.all(20.0),
                                           child: Center(
                                             child: RaisedButton(
@@ -195,7 +262,10 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
                                                           18.0),
                                                   side: BorderSide(
                                                       color: Colors.indigo)),
-                                              child: Text(AppLocalizations.of(context).translate('uploadLogoButton'),
+                                              child: Text(
+                                                  AppLocalizations.of(context)
+                                                      .translate(
+                                                          'uploadLogoButton'),
                                                   style: TextStyle(
                                                       fontStyle:
                                                           FontStyle.italic,
@@ -213,7 +283,9 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Text(AppLocalizations.of(context).translate('titleRangePS'),
+                                          child: Text(
+                                              AppLocalizations.of(context)
+                                                  .translate('titleRangePS'),
                                               style: TextStyle(
                                                   color: Colors.indigo,
                                                   fontSize: 25,
@@ -244,15 +316,13 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
                                                         if (_state == 0) {
                                                           animateButton();
                                                         }
-
                                                         final pdfFile = await PdfApi
                                                             .generateTag(
                                                                 telephone.text,
                                                                 ps.text,
                                                                 psStartList,
                                                                 psFinalList,
-                                                                pos_InitialTag
-                                                                    .text,
+                                                                pos_InitialTag,
                                                                 psNumTagList,
                                                                 uploadedImage);
                                                         if (!kIsWeb) {
@@ -362,7 +432,8 @@ class _formTagState extends State<formTag> with TickerProviderStateMixin {
 
   setUpButtonChild() {
     if (_state == 0) {
-      return Text(AppLocalizations.of(context).translate('downloadPDFButton'),
+      return Text(
+        AppLocalizations.of(context).translate('downloadPDFButton'),
         style: const TextStyle(
           color: Colors.white,
           fontSize: 16,
@@ -442,6 +513,9 @@ class _PsTextFieldsState extends State<_PsTextFields> {
       psFirst.text = _formTagState.psStartList[widget.index] ?? '';
       psFinal.text = _formTagState.psFinalList[widget.index] ?? '';
       numTags.text = _formTagState.psNumTagList[widget.index] ?? '';
+      if (psFinal.text.isEmpty){
+        psFinal.text = '1';
+      }
     });
 
     return Row(
@@ -457,7 +531,8 @@ class _PsTextFieldsState extends State<_PsTextFields> {
                 onChanged: (v) => _formTagState.psStartList[widget.index] = v,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context).translate('textfieldPSInitial'),
+                    labelText: AppLocalizations.of(context)
+                        .translate('textfieldPSInitial'),
                     icon: Icon(Icons.code)),
               ),
             ),
@@ -474,7 +549,9 @@ class _PsTextFieldsState extends State<_PsTextFields> {
                 onChanged: (v) => _formTagState.psFinalList[widget.index] = v,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    labelText:AppLocalizations.of(context).translate('textfieldPSFinal'), icon: Icon(Icons.code)),
+                    labelText: AppLocalizations.of(context)
+                        .translate('textfieldPSFinal'),
+                    icon: Icon(Icons.code)),
               ),
             ),
           ),
@@ -490,7 +567,9 @@ class _PsTextFieldsState extends State<_PsTextFields> {
                 onChanged: (v) => _formTagState.psNumTagList[widget.index] = v,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context).translate('textfieldNumTag'), icon: Icon(Icons.tag)),
+                    labelText: AppLocalizations.of(context)
+                        .translate('textfieldNumTag'),
+                    icon: Icon(Icons.tag)),
               ),
             ),
           ),
@@ -499,4 +578,3 @@ class _PsTextFieldsState extends State<_PsTextFields> {
     );
   }
 }
-
